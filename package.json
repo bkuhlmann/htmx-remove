@@ -1,0 +1,46 @@
+{
+  "name": "htmx-remove",
+  "version": "0.0.0",
+  "description": "Extends htmx with DOM element click event removal.",
+  "main": "build/htmx-remove.js",
+  "type": "module",
+  "files": [
+    "build/*.js"
+  ],
+  "unpkg": "build/htmx-remove.js",
+  "scripts": {
+    "build": "npm run clean && npm run quality && mkdir -p build && cp -r lib/* build/ && npm run uglify",
+    "clean": "rm -rf build",
+    "test": "mocha",
+    "test:watch": "mocha --parallel --watch",
+    "quality": "bundle exec rake && eslint .",
+    "uglify": "mkdir -p build && uglifyjs -m eval -o build/htmx-remove.js lib/htmx-remove.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkuhlmann/htmx-remove.git"
+  },
+  "keywords": [
+    "htmx",
+    "extension",
+    "element",
+    "remove"
+  ],
+  "author": "Brooke Kuhlmann",
+  "license": "Hippocratic-2.1",
+  "bugs": {
+    "url": "https://github.com/bkuhlmann/htmx-remove/issues"
+  },
+  "funding": {
+    "url": "https://github.com/sponsors/bkuhlmann"
+  },
+  "homepage": "https://alchemists.io/projects/htmx-remove",
+  "devDependencies": {
+    "chai": "~4.3",
+    "eslint": "~8.54",
+    "htmx.org": "~1.9",
+    "jsdom": "~22.1",
+    "mocha": "~10.2",
+    "uglify-js": "~3.17"
+  }
+}

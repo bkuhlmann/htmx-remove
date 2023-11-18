@@ -1,0 +1,54 @@
+version: 2.1
+jobs:
+  build:
+    working_directory: ~/project
+    docker:
+      - image: bkuhlmann/alpine-ruby:latest
+    steps:
+      - checkout
+
+      - run:
+          name: Install Node
+          command: apk add nodejs npm
+
+      - restore_cache:
+          name: Bundler Restore
+          keys:
+            - gem-cache-{{.Branch}}-{{checksum "Gemfile.lock"}}
+            - gem-cache-
+
+      - run:
+          name: Bundler Install
+          command: |
+            gem update --system
+            bundle config set path "vendor/bundle"
+            bundle install
+
+      - save_cache:
+          name: Bundler Store
+          key: gem-cache-{{.Branch}}-{{checksum "Gemfile.lock"}}
+          paths:
+            - vendor/bundle
+
+      - restore_cache:
+          name: NPM Restore
+          keys:
+            - package-cache-{{.Branch}}-{{checksum "package.json"}}
+            - package-cache-
+
+      - run:
+          name: NPM Install
+          command: npm install
+
+      - save_cache:
+          name: NPM Store
+          key: package-cache-{{.Branch}}-{{checksum "package.json"}}
+          paths:
+            - node_modules
+
+      - run:
+          name: Build
+          command: |
+            bundle exec rake
+            npm run quality
+            npm test

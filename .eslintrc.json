@@ -1,0 +1,23 @@
+{
+  "env": {
+    "browser": true,
+    "es2024": true,
+    "node": true,
+    "mocha": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "ignorePatterns": ["build/", "vendor/"],
+  "globals": {
+    "htmx": "readonly"
+  },
+  "rules": {
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "extension": ["js"],
+  "recursive": true,
+  "spec": "spec/**/*.js",
+  "watch-files": ["lib/**/*.js", "spec/**/*.js"]
+}
