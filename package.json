@@ -5,7 +5,10 @@
   "main": "build/htmx-remove.js",
   "type": "module",
   "files": [
-    "build/*.js"
+    "build/*.js",
+    "README.adoc",
+    "CITATION.cff",
+    "LICENSE.adoc"
   ],
   "unpkg": "build/htmx-remove.js",
   "scripts": {
