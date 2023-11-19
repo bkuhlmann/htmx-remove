@@ -1,0 +1,151 @@
+:toc: macro
+:toclevels: 5
+:figure-caption!:
+
+:htmx_link: link:https://htmx.org[htmx]
+
+= htmx Remove
+
+This library is an {htmx_link} link:https://htmx.org/extensions[extension] that can be _optionally_ used for situations in which you need to remove an element from the DOM that was originally added by {htmx_link} _without_ making an HTTP request.
+
+This library extension is most useful in situations in which you have clicked a link or triggered an htmx HTTP request which inserts a new DOM element such as form which has a cancel link/button. In these situations, you don't need to make an HTTP request to cancel/remove the newly added form. Instead, you only need to remove the original form.
+
+toc::[]
+
+== Features
+
+* Provides a convenient solution for canceling/removing DOM elements originally added by htmx without making additional HTTP requests.
+
+== Screencasts
+
+image:https://alchemists.io/images/projects/htmx-remove/screencasts/demo.gif[Demonstration,width=800,height=523,role=focal_point]
+
+== Requirements
+
+. {htmx_link}.
+. link:https://nodejs.org[Node] (optional, for development).
+. link:https://www.ruby-lang.org[Ruby] (optional, for development).
+
+== Setup
+
+To install, run:
+
+[source,bash]
+----
+npm install htmx-remove
+----
+
+Once the library is installed, you only need to require it:
+
+[source,html]
+----
+<script src="htmx-remove.js"></script>
+----
+
+== Usage
+
+A typical use case is to have a link which triggers an {htmx_link} request for adding a new form element to the DOM. Example:
+
+[source,html]
+----
+<a hx-get="/tasks/new"
+   hx-trigger="click"
+   hx-target=".tasks"
+   hx-swap="beforeend"
+   href="/tasks/new">
+  New
+</a>
+
+<section class="tasks">
+</section>
+----
+
+Upon clicking the _New_ link, the following element would be added to the DOM after {htmx_link} resolves the request:
+
+[source,html]
+----
+<form class="body" action="/tasks" method="post" hx-ext="remove">
+  <!-- Implementation details... -->
+
+  <input name="commit"
+         type="submit"
+         value="Save"
+         hx-trigger="click"
+         hx-target="closest .task"
+         hx-swap="outerHTML"
+         hx-post="/tasks">
+
+  <button data-remove="true">Cancel</button>
+</form>
+----
+
+In this case, clicking the _Cancel_ button would remove the entire form element from the DOM. This is made possible by first adding the `hx-ext="remove"` attribute to the `form` element and then adding the `data-remove="true"` attribute to the `button` element.
+
+Behind the scenes, this extension will listen for click events for the first element with a `data-remove="true"` attribute. Once clicked, the corresponding element for which this extension is loaded and associated with (i.e. `form`) via the `hx-ext="remove"` attribute will be removed from the DOM.
+
+That's it! A simple extension for dealing with DOM elements a user might want to cancel/remove because they decided adding something new wasn't necessary after all.
+
+== Development
+
+To contribute, run:
+
+[source,bash]
+----
+git clone https://github.com/bkuhlmann/htmx-remove
+cd htmx-remove
+bin/setup
+----
+
+To build, run:
+
+[source,bash]
+----
+npm run build
+----
+
+To view interactive demonstration, run
+
+[source,bash]
+----
+open demo.html
+----
+
+== Tests
+
+To test, run:
+
+[source,bash]
+----
+bin/rake
+npm test
+----
+
+To test with live updates, run:
+
+[source,bash]
+----
+npm run test:watch
+----
+
+To check code quality, run:
+
+[source,bash]
+----
+npm run quality
+----
+
+== link:https://alchemists.io/policies/license[License]
+
+== link:https://alchemists.io/policies/security[Security]
+
+== link:https://alchemists.io/policies/code_of_conduct[Code of Conduct]
+
+== link:https://alchemists.io/policies/contributions[Contributions]
+
+== link:https://alchemists.io/projects/htmx-remove/versions[Versions]
+
+== link:https://alchemists.io/community[Community]
+
+== Credits
+
+* Engineered by link:https://alchemists.io/team/brooke_kuhlmann[Brooke Kuhlmann].
