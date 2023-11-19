@@ -18,7 +18,7 @@ toc::[]
 
 == Screencasts
 
-image:https://alchemists.io/images/projects/htmx-remove/screencasts/demo.gif[Demonstration,width=800,height=523,role=focal_point]
+video::https://alchemists.io/videos/projects/htmx-remove/demo.mp4[poster=https://alchemists.io/images/projects/htmx-remove/demo.png,width=952,height=598,role=focal_point]
 
 == Requirements
 
@@ -28,7 +28,33 @@ image:https://alchemists.io/images/projects/htmx-remove/screencasts/demo.gif[Dem
 
 == Setup
 
-To install, run:
+The following _assumes_ you are already using {htmx_link} and have it configured in the same manner as documented in this setup section.
+
+To use via the HTML `script` element, add the following to your layout:
+
+[source,html]
+----
+<script src="https://unpkg.com/htmx-remove@latest"></script>
+----
+
+To use via Import Maps, add the following to your layout:
+
+[source,html]
+----
+<script type="importmap">
+  {
+    "imports": {
+      "htmx-remove": "https://unpkg.com/htmx-remove@latest"
+    }
+  }
+</script>
+
+<script type="module">
+  import * as htmx_remove from "htmx-remove";
+</script>
+----
+
+To install via link:https://www.npmjs.com[NPM], run:
 
 [source,bash]
 ----
@@ -107,7 +133,11 @@ To view interactive demonstration, run
 
 [source,bash]
 ----
-open demo.html
+# With default port.
+bin/demo
+
+# With custom port.
+bin/demo 9050
 ----
 
 == Tests
@@ -116,15 +146,7 @@ To test, run:
 
 [source,bash]
 ----
-bin/rake
-npm test
-----
-
-To test with live updates, run:
-
-[source,bash]
-----
-npm run test:watch
+bin/rake spec
 ----
 
 To check code quality, run:
@@ -132,6 +154,17 @@ To check code quality, run:
 [source,bash]
 ----
 npm run quality
+bin/rake quality
+----
+
+== Deployment
+
+To deploy, run:
+
+[source,bash]
+----
+npm run build
+npm publish
 ----
 
 == link:https://alchemists.io/policies/license[License]
