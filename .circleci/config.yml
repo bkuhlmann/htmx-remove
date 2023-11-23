@@ -5,6 +5,15 @@ jobs:
     docker:
       - image: bkuhlmann/alpine-ruby:latest
     steps:
+      - run:
+          name: Install Chromium
+          command: apk add gcompat glib nss libxcb libgcc chromium
+      - run:
+          name: Start Chromium
+          command: |
+            export DISPLAY=:99
+            chromedriver --url-base=/wd/hub &
+
       - checkout
 
       - run:
@@ -48,7 +57,9 @@ jobs:
 
       - run:
           name: Build
-          command: |
-            bundle exec rake
-            npm run quality
-            npm test
+          command: npm run build
+
+      - store_artifacts:
+          name: SimpleCov Artifacts Upload
+          path: ~/project/coverage
+          destination: coverage
