@@ -10,7 +10,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "ignorePatterns": ["build/", "vendor/"],
+  "ignorePatterns": ["build/", "coverage/", "vendor/"],
   "globals": {
     "htmx": "readonly"
   },
