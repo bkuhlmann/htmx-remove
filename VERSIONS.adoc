@@ -1,5 +1,23 @@
 = Versions
 
+== 0.1.0 (2023-11-23)
+
+* Fixed click event listener to prevent default event - Brooke Kuhlmann
+* Added Gemfile.lock to Git ignore - Brooke Kuhlmann
+* Added RSpec feature spec - Brooke Kuhlmann
+* Added Ruby quality and spec infrastructure - Brooke Kuhlmann
+* Added demonstration folder - Brooke Kuhlmann
+* Added demonstration script - Brooke Kuhlmann
+* Added documentation to package files - Brooke Kuhlmann
+* Added latest build - Brooke Kuhlmann
+* Updated Circle CI to use Ruby test framework - Brooke Kuhlmann
+* Updated ESLint to ignore coverage folder - Brooke Kuhlmann
+* Updated demonstration to include buttons and links - Brooke Kuhlmann
+* Updated documentation - Brooke Kuhlmann
+* Removed JavaScript spec - Brooke Kuhlmann
+* Removed spec index - Brooke Kuhlmann
+* Removed unused development packages - Brooke Kuhlmann
+
 == 0.0.0 (2023-11-19)
 
 * Added demonstration - Brooke Kuhlmann
