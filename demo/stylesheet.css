@@ -1,4 +1,13 @@
-body {
+.page {
+  --color-white: hsl(0, 0%, 100%);
+  --color-green: hsl(110, 64.6%, 31%);
+  --color-green-bright: hsl(110, 64.6%, 45%);
+  --color-navy: hsl(192, 35%, 15.3%);
+  --color-navy-bright: hsl(192, 35%, 25%);
+  --color-crimson: hsl(0, 85%, 35%);
+  --color-crimson-bright: hsl(0, 85%, 50%);
+  --font-family: Verdana;
+
   align-items: center;
   background-image: linear-gradient(
     45deg,
@@ -13,33 +22,85 @@ body {
     hsl(155deg 100% 46%) 89%,
     hsl(143deg 100% 50%) 100%
   );
+  color: var(--color-white);
   display: flex;
+  flex-direction: column;
+  font-family: var(--font-family);
   justify-content: center;
   height: 100vh;
-}
 
-.button {
-  border: 0;
-  border-radius: 0.5rem;
-  color: hsl(0, 0%, 100%);
-  cursor: pointer;
-  font-size: 2rem;
-  padding: 0.5rem 1rem;
-}
+  .header {
+    margin-bottom: 1rem;
+  }
 
-.save {
-  background-color: hsl(192.9, 35.9%, 15.3%);
+  .label {
+    text-align: center;
+  }
 
-  &:hover {
-    background-color: hsl(192.9, 100%, 15.3%);
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .dock {
+    min-height: 6rem;
+  }
+
+  .caption {
+    font-size: 1.5rem;
+  }
+
+  .group {
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .button {
+    border: 0;
+    border-radius: 0.5rem;
+    color: var(--color-white);
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.3rem 1rem;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .input {
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  .new {
+    background-color: var(--color-green);
+
+    &:hover {
+      background-color: var(--color-green-bright);
+    }
+  }
+
+  .save {
+    background-color: var(--color-navy);
+
+    &:hover {
+      background-color: var(--color-navy-bright);
+    }
+  }
+
+  .cancel {
+    background-color: var(--color-crimson);
+
+    &:hover {
+      background-color: var(--color-crimson-bright);
+    }
   }
 }
-
-.cancel {
-  background-color: hsl(0, 88%, 37%);
-
-  &:hover {
-    background-color: hsl(0, 100%, 37%);
-  }
-}
-

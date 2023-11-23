@@ -10,16 +10,36 @@
     <meta name="description" content="A demo page.">
     <meta name="author" content="Brooke Kuhlmann">
 
-    <link href="stylesheet.css" rel="stylesheet">
+    <link href="/stylesheet.css" rel="stylesheet">
 
-    <script src="https://unpkg.com/htmx.org@1.9.8"></script>
-    <script src="../lib/htmx-remove.js"></script>
+    <script src="https://unpkg.com/htmx.org@1.9"></script>
+    <script src="/htmx-remove.js"></script>
   </head>
 
-  <body>
-    <div hx-ext="remove">
-      <button class="button save">Save</button>
-      <button class="button cancel" data-remove="true">Cancel</button>
-    </div>
+  <body class="page">
+    <header class="header">
+      <h1 class="label">htmx Remove</h1>
+      <h2 class="label">Demonstration</h2>
+    </header>
+
+    <main class="body">
+      <section class="actions">
+        <a href="/_link_form.html"
+           class="button new"
+           hx-get="/_link_form.html"
+           hx-target=".dock">
+          New Link
+        </a>
+
+        <a href="/_button_form.html"
+           class="button new"
+           hx-get="/_button_form.html"
+           hx-target=".dock">
+          New Button
+        </a>
+      </section>
+
+      <section class="dock"></section>
+    </main>
   </body>
 </html>
