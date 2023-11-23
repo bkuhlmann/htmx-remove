@@ -1,0 +1,45 @@
+body {
+  align-items: center;
+  background-image: linear-gradient(
+    45deg,
+    hsl(230deg 61% 21%) 0%,
+    hsl(213deg 100% 24%) 11%,
+    hsl(208deg 100% 30%) 22%,
+    hsl(204deg 100% 35%) 33%,
+    hsl(199deg 100% 38%) 44%,
+    hsl(191deg 100% 39%) 56%,
+    hsl(180deg 100% 37%) 67%,
+    hsl(167deg 100% 41%) 78%,
+    hsl(155deg 100% 46%) 89%,
+    hsl(143deg 100% 50%) 100%
+  );
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.button {
+  border: 0;
+  border-radius: 0.5rem;
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+}
+
+.save {
+  background-color: hsl(192.9, 35.9%, 15.3%);
+
+  &:hover {
+    background-color: hsl(192.9, 100%, 15.3%);
+  }
+}
+
+.cancel {
+  background-color: hsl(0, 88%, 37%);
+
+  &:hover {
+    background-color: hsl(0, 100%, 37%);
+  }
+}
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+
+    <title>Demo</title>
+
+    <meta charset="utf-8">
+    <meta name="description" content="A demo page.">
+    <meta name="author" content="Brooke Kuhlmann">
+
+    <link href="stylesheet.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/htmx.org@1.9.8"></script>
+    <script src="../lib/htmx-remove.js"></script>
+  </head>
+
+  <body>
+    <div hx-ext="remove">
+      <button class="button save">Save</button>
+      <button class="button cancel" data-remove="true">Cancel</button>
+    </div>
+  </body>
+</html>
