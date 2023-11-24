@@ -2,8 +2,10 @@
 
 require "capybara/cuprite"
 require "capybara/rspec"
+require "rackup/handler/webrick"
 require "spec_helper"
 
+Capybara.server = :webrick
 Capybara.javascript_driver = :cuprite
 Capybara.save_path = Bundler.root.join "tmp/capybara"
 Capybara.register_driver :cuprite do |app|
@@ -11,4 +13,4 @@ Capybara.register_driver :cuprite do |app|
   Capybara::Cuprite::Driver.new app, browser_options:, window_size: [1920, 1080]
 end
 
-RSpec.configure { |config| config.include Capybara::DSL, :web }
+RSpec.configure { |config| config.include Capybara::DSL, :js }
