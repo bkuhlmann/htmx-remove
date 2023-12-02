@@ -12,10 +12,9 @@
   ],
   "unpkg": "build/htmx-remove.js",
   "scripts": {
-    "build": "npm run clean && npm run quality && mkdir -p build && cp -r lib/* build/ && npm run uglify",
-    "clean": "rm -rf build",
-    "quality": "bundle exec rake && eslint .",
-    "uglify": "mkdir -p build && uglifyjs -m eval -o build/htmx-remove.js lib/htmx-remove.js"
+    "build": "bin/build",
+    "quality": "eslint . && bin/rake quality",
+    "uglify": "uglifyjs -m eval -o build/htmx-remove.js lib/htmx-remove.js"
   },
   "repository": {
     "type": "git",

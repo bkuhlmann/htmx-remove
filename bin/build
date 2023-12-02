@@ -1,0 +1,28 @@
+#! /usr/bin/env bash
+
+set -o nounset
+set -o errexit
+set -o pipefail
+IFS=$'\n\t'
+
+cdn="https://unpkg.com/htmx-remove@latest"
+path="build/htmx-remove.js"
+
+rm -rf build && \
+npm run quality && \
+bin/rspec && \
+mkdir -p build && \
+cp -r lib/* build/ && \
+npm run uglify
+
+integrity="$(openssl dgst -sha384 -binary < "$path" | openssl base64 -A)"
+
+cat << SCRIPT
+<script src="$cdn"
+        integrity="sha384-$integrity"
+        crossorigin="anonymous">
+</script>
+SCRIPT
+
+printf "\n%s\n" "Path: $path"
+printf "\n%s\n" "Build Finished!"
