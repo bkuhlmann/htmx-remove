@@ -34,7 +34,10 @@ To use via the HTML `script` element, add the following to your layout:
 
 [source,html]
 ----
-<script src="https://unpkg.com/htmx-remove@latest"></script>
+<script src="https://unpkg.com/htmx-remove@latest"
+        integrity="sha384-v6VOSW2F42qo+95FGFDZCY72+0md5SolbibTa8Kgn8DkCrevZNkgTsWXdEMXyeRX"
+        crossorigin="anonymous">
+</script>
 ----
 
 To use via Import Maps, add the following to your layout:
@@ -146,25 +149,36 @@ To test, run:
 
 [source,bash]
 ----
-bin/rake spec
+bin/rake
 ----
 
-To check code quality, run:
+To only check code quality, run:
 
 [source,bash]
 ----
 npm run quality
-bin/rake quality
+----
+
+To only check specs, run:
+
+[source,bash]
+----
+bin/rspec
 ----
 
 == Deployment
 
-To deploy, run:
+To deploy, follow these steps:
+
+. Ensure link:https://alchemists.io/projects/milestoner[Milestoner] is installed.
+. Ensure you are on the `main` branch.
+. Run the following:
 
 [source,bash]
 ----
 npm run build
 npm publish
+milestoner --publish <version>
 ----
 
 == link:https://alchemists.io/policies/license[License]

@@ -1,5 +1,18 @@
 = Versions
 
+== 0.2.0 (2023-12-02)
+
+* Fixed RSpec Rack helper to use Webrick server - Brooke Kuhlmann
+* Fixed demo feature specs to properly test JavaScript stack - Brooke Kuhlmann
+* Added Rackup gem - Brooke Kuhlmann
+* Added build script - Brooke Kuhlmann
+* Updated Guardfile to watch for implementation changes - Brooke Kuhlmann
+* Updated to Node 21.3.0 - Brooke Kuhlmann
+* Removed Gemfile code prefix from quality group - Brooke Kuhlmann
+* Removed package test scripts - Brooke Kuhlmann
+* Refactored demo spec to lib folder - Brooke Kuhlmann
+* Refactored implementation variables - Brooke Kuhlmann
+
 == 0.1.0 (2023-11-23)
 
 * Fixed click event listener to prevent default event - Brooke Kuhlmann
