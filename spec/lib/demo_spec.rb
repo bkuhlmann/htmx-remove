@@ -3,7 +3,7 @@
 require "rack_helper"
 
 RSpec.describe "Demo", :js do
-  using Refinements::Pathnames
+  using Refinements::Pathname
 
   subject :app do
     Rack::Static.new proc { [200, {"Content-Type" => "text/html"}, ["<h1>Demo</h1>"]] },
