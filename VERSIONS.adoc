@@ -1,5 +1,11 @@
 = Versions
 
+== 1.0.0 (2024-01-01)
+
+* Updated Circle CI step names - Brooke Kuhlmann
+* Updated gem dependencies - Brooke Kuhlmann
+* Updated to Ruby 3.3.0 - Brooke Kuhlmann
+
 == 0.2.0 (2023-12-02)
 
 * Fixed RSpec Rack helper to use Webrick server - Brooke Kuhlmann
