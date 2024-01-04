@@ -31,7 +31,7 @@ RSpec.describe "Demo", :js do
     expect(page).to have_content("Cancel Link")
 
     click_on "Cancel"
-    expect(page).not_to have_content("Cancel Link")
+    expect(page).to have_no_content("Cancel Link")
   end
 
   it "adds and removes button", :aggregate_failures do
@@ -42,6 +42,6 @@ RSpec.describe "Demo", :js do
     expect(page).to have_content("Cancel Button")
 
     click_on "Cancel"
-    expect(page).not_to have_content("Cancel Button")
+    expect(page).to have_no_content("Cancel Button")
   end
 end
