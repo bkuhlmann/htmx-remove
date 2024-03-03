@@ -23,7 +23,7 @@ group :test do
   gem "rack-test", "~> 2.1"
   gem "rackup", "~> 2.1"
   gem "refinements", "~> 12.1"
-  gem "rspec", "~> 3.12"
+  gem "rspec", "~> 3.13"
 end
 
 group :tools do
