@@ -1,6 +1,6 @@
 {
   "name": "htmx-remove",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Extends htmx with DOM element click event removal.",
   "main": "build/htmx-remove.js",
   "type": "module",
