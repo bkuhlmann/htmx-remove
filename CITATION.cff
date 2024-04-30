@@ -1,10 +1,10 @@
 cff-version: 1.2.0
 message: Please use the following metadata when citing this project in your work.
 title: htmx Remove
-abstract: Extends htmx with DOM element click event removal.
-version: 1.3.0
+abstract: A htmx extension for DOM element removal via click events.
+version: 1.4.0
 license: Hippocratic-2.1
-date-released: 2024-04-21
+date-released: 2024-05-22
 authors:
   - family-names: Kuhlmann
     given-names: Brooke
