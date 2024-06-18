@@ -1,5 +1,14 @@
 = Versions
 
+== 1.5.0 (2024-06-18)
+
+* 🔼 Updated to Caliber 0.58.0 - Brooke Kuhlmann
+* 🔼 Updated to Node 22.3.0 - Brooke Kuhlmann
+* 🔼 Updated to Ruby 3.3.3 - Brooke Kuhlmann
+* 🔼 Updated to Uglify 3.19 - Brooke Kuhlmann
+* 🔼 Updated to eslint 9.5.0 - Brooke Kuhlmann
+* 🔼 Updated to htmx 2.0.0 - Brooke Kuhlmann
+
 == 1.4.1 (2024-06-01)
 
 * 🔼 Updated citation URLs - Brooke Kuhlmann
