@@ -37,6 +37,6 @@
   "homepage": "https://alchemists.io/projects/htmx-remove",
   "devDependencies": {
     "eslint": "~9.5",
-    "uglify-js": "~3.17"
+    "uglify-js": "~3.18"
   }
 }
