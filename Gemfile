@@ -22,7 +22,7 @@ group :test do
   gem "launchy", "~> 3.0"
   gem "rack-test", "~> 2.1"
   gem "rackup", "~> 2.1"
-  gem "refinements", "~> 12.1"
+  gem "refinements", "~> 12.5"
   gem "rspec", "~> 3.13"
 end
 
