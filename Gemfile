@@ -18,7 +18,6 @@ end
 group :test do
   gem "capybara", "~> 3.39"
   gem "cuprite", "~> 0.14"
-  gem "guard-rspec", "~> 4.7", require: false
   gem "launchy", "~> 3.0"
   gem "rack-test", "~> 2.1"
   gem "rackup", "~> 2.1"
