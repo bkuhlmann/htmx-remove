@@ -1,5 +1,13 @@
 = Versions
 
+== 1.7.0 (2024-08-23)
+
+* ✅ Fixed Rack helper to disable jemalloc for Capybara testing - Brooke Kuhlmann
+* 🟢 Added README Developer Certificate of Origin documentation - Brooke Kuhlmann
+* 🔼 Updated to Node 22.7.0 - Brooke Kuhlmann
+* 🔼 Updated to Refinements 12.7.0 - Brooke Kuhlmann
+* ⛔️ Removed Guard - Brooke Kuhlmann
+
 == 1.6.0 (2024-07-09)
 
 * 🔼 Updated to Git Lint 8.0.0 - Brooke Kuhlmann
