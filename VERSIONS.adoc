@@ -1,5 +1,13 @@
 = Versions
 
+== 1.8.0 (2024-09-03)
+
+* 🔼 Updated to ES Lint 9.9.0 - Brooke Kuhlmann
+* 🔼 Updated to Node 22.8.0 - Brooke Kuhlmann
+* 🔼 Updated to Refinements 12.8.0 - Brooke Kuhlmann
+* 🔼 Updated to Ruby 3.3.5 - Brooke Kuhlmann
+* 🔼 Updated to Uglify 3.19.0 - Brooke Kuhlmann
+
 == 1.7.0 (2024-08-23)
 
 * ✅ Fixed Rack helper to disable jemalloc for Capybara testing - Brooke Kuhlmann
