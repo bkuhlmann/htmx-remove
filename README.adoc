@@ -40,6 +40,8 @@ To use via the HTML `script` element, add the following to your layout:
 </script>
 ----
 
+💡 You might need to use the link:https://www.srihash.org[SRI Hash Generator] to update the above integrity hash since the latest version can get stale after each release.
+
 To use via Import Maps, add the following to your layout:
 
 [source,html]
