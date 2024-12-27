@@ -16,7 +16,7 @@ RSpec.describe "Demo", :js do
   let(:app_path) { Bundler.root.join "tmp/test" }
 
   before do
-    app_path.remove_tree.make_path
+    app_path.rmtree.mkpath
     Bundler.root.join("demo").files.each { |path| path.copy app_path }
     Bundler.root.join("lib/htmx-remove.js").copy app_path
     Capybara.app = app
