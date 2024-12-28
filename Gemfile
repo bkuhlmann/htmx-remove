@@ -16,7 +16,9 @@ group :development do
 end
 
 group :test do
-  gem "capybara", "~> 3.39"
+  # TODO: Remove once this issue is resolved: https://github.com/rubycdp/cuprite/issues/284.
+  gem "base64", "~> 0.2"
+  gem "capybara", "~> 3.40"
   gem "cuprite", "~> 0.15"
   gem "launchy", "~> 3.0"
   gem "rack-test", "~> 2.1"
