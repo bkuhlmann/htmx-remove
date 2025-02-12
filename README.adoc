@@ -40,8 +40,6 @@ To use via the HTML `script` element, add the following to your layout:
 </script>
 ----
 
-💡 You might need to use the link:https://www.srihash.org[SRI Hash Generator] to update the above integrity hash since the latest version can get stale after each release.
-
 To use via Import Maps, add the following to your layout:
 
 [source,html]
@@ -131,7 +129,7 @@ To build, run:
 
 [source,bash]
 ----
-npm run build
+bin/build
 ----
 
 To view interactive demonstration, run
@@ -178,9 +176,9 @@ To deploy, follow these steps:
 
 [source,bash]
 ----
-npm run build
+bin/build
 npm publish
-milestoner --publish <version>
+milestoner --publish
 ----
 
 == link:https://alchemists.io/policies/license[License]

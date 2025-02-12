@@ -2,16 +2,19 @@ cff-version: 1.2.0
 message: Please use the following metadata when citing this project in your work.
 title: htmx Remove
 abstract: A htmx extension for DOM element removal via click events.
-version: 2.1.0
+version: 2.2.0
 license: Hippocratic-2.1
-date-released: 2025-02-05
+date-released: 2025-02-12
 authors:
   - family-names: Kuhlmann
     given-names: Brooke
     affiliation: Alchemists
     orcid: https://orcid.org/0000-0002-5810-6268
 keywords:
- - ruby
+ - htmx
+ - extension
+ - element
+ - remove
 repository-code: https://github.com/bkuhlmann/htmx-remove
 repository-artifact: https://www.npmjs.com/package/htmx-remove
 url: https://alchemists.io/projects/htmx-remove
