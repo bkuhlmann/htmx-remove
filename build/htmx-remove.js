@@ -1,1 +1,0 @@
-"use strict";(function(){htmx.defineExtension("remove",{onEvent:(e,t)=>{const n=t.detail.elt;if(e==="htmx:afterProcessNode"){const o=n.querySelector("[data-remove]");if(o!==null){o.addEventListener("click",e=>{e.preventDefault();n.remove()})}}}})})();
