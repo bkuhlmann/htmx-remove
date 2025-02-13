@@ -18,12 +18,12 @@ jobs:
 
       - run:
           name: Node Install
-          command: apk add nodejs npm
+          command: apk add nodejs npm sqlite-dev
 
       - restore_cache:
           name: Gems Restore
           keys:
-            - gem-cache-{{.Branch}}-{{checksum "Gemfile.lock"}}
+            - gem-cache-{{.Branch}}-{{checksum "Gemfile"}}
             - gem-cache-
 
       - run:
@@ -35,7 +35,7 @@ jobs:
 
       - save_cache:
           name: Gems Store
-          key: gem-cache-{{.Branch}}-{{checksum "Gemfile.lock"}}
+          key: gem-cache-{{.Branch}}-{{checksum "Gemfile"}}
           paths:
             - vendor/bundle
 
