@@ -26,11 +26,11 @@ RSpec.describe "Demo", :js do
     visit "/index.html"
     expect(page).to have_content("Demonstration")
 
-    click_on "New Link"
+    click_link "New Link"
 
     expect(page).to have_content("Cancel Link")
 
-    click_on "Cancel"
+    click_link "Cancel"
     expect(page).to have_no_content("Cancel Link")
   end
 
@@ -38,10 +38,10 @@ RSpec.describe "Demo", :js do
     visit "/index.html"
     expect(page).to have_content("Demonstration")
 
-    click_on "New Button"
+    click_link "New Button"
     expect(page).to have_content("Cancel Button")
 
-    click_on "Cancel"
+    click_button "Cancel"
     expect(page).to have_no_content("Cancel Button")
   end
 end
