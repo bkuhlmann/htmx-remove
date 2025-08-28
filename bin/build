@@ -7,13 +7,19 @@ IFS=$'\n\t'
 
 cdn="https://unpkg.com/htmx-remove@latest"
 path="build/htmx-remove.js"
+esm_path="build/htmx-remove.esm.js"
 
-rm -rf build && \
-npm run quality && \
-bin/rspec && \
-mkdir -p build && \
-cp -r lib/* build/ && \
-npm run uglify
+rm -rf build \
+&& npm run quality \
+&& bin/rspec \
+&& mkdir -p build \
+&& cp -r lib/* build/ \
+&& cp path esm_path
+
+for file in build/*.js; do
+  printf "%s\n" "Minified: $file"
+  npm exec -c 'uglifyjs "$file" --compress --mangle --output "$file"'
+done
 
 integrity="$(openssl dgst -sha384 -binary < "$path" | openssl base64 -A)"
 
