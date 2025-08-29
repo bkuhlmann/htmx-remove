@@ -57,7 +57,7 @@ jobs:
 
       - run:
           name: Build
-          command: npm run build
+          command: bin/build
 
       - store_artifacts:
           name: SimpleCov Report

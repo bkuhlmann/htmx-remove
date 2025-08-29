@@ -8,12 +8,24 @@ IFS=$'\n\t'
 cdn="https://unpkg.com/htmx-remove@latest"
 path="build/htmx-remove.js"
 
-rm -rf build && \
-npm run quality && \
-bin/rspec && \
-mkdir -p build && \
-cp -r lib/* build/ && \
-npm run uglify
+rm -rf build \
+&& npx eslint . \
+&& bin/rake quality \
+&& bin/rspec \
+&& mkdir -p build \
+&& cp -r lib/* build/
+
+for file in build/*.js; do
+  cp "$file" "${file%.js}.esm.js"
+done
+
+for file in build/*.esm.js; do
+  sed -i.tmp 's/"use strict"/import htmx from "htmx.org"/g' "$file" && rm "$file.tmp"
+done
+
+for file in build/*.js; do
+  npx esbuild "$file" --minify --allow-overwrite --outfile="$file"
+done
 
 integrity="$(openssl dgst -sha384 -binary < "$path" | openssl base64 -A)"
 
