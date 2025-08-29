@@ -11,11 +11,6 @@
     "LICENSE.adoc"
   ],
   "unpkg": "build/htmx-remove.js",
-  "scripts": {
-    "build": "bin/build",
-    "quality": "eslint . && bin/rake quality",
-    "uglify": "uglifyjs -m eval -o build/htmx-remove.js lib/htmx-remove.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bkuhlmann/htmx-remove.git"
@@ -37,7 +32,6 @@
   "homepage": "https://alchemists.io/projects/htmx-remove",
   "devDependencies": {
     "esbuild": "^0.25.9",
-    "eslint": "~9.34",
-    "uglify-js": "~3.19"
+    "eslint": "^9.34"
   }
 }
