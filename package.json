@@ -32,6 +32,6 @@
   "homepage": "https://alchemists.io/projects/htmx-remove",
   "devDependencies": {
     "esbuild": "^0.25.9",
-    "eslint": "^9.34"
+    "eslint": "^9.36"
   }
 }
