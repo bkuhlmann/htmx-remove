@@ -6,7 +6,7 @@ source "https://rubygems.org"
 
 group :quality do
   gem "caliber", "~> 0.82"
-  gem "git-lint", "~> 9.0"
+  # gem "git-lint", "~> 9.0"
   gem "reek", "~> 6.5", require: false
   gem "simplecov", "~> 0.22", require: false
 end
@@ -21,7 +21,7 @@ group :test do
   gem "launchy", "~> 3.0"
   gem "rack-test", "~> 2.1"
   gem "rackup", "~> 2.1"
-  gem "refinements", "~> 13.5"
+  gem "refinements", "~> 14.0"
   gem "rspec", "~> 3.13"
 end
 
