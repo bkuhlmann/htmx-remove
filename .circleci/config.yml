@@ -7,12 +7,7 @@ jobs:
     steps:
       - run:
           name: Chromium Install
-          command: apk add gcompat glib nss libxcb libgcc chromium
-      - run:
-          name: Chromium Start
-          command: |
-            export DISPLAY=:99
-            chromedriver --url-base=/wd/hub &
+          command: apk add chromium
 
       - checkout
 
