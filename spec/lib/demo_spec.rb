@@ -24,24 +24,24 @@ RSpec.describe "Demo", :js do
 
   it "adds and removes link", :aggregate_failures do
     visit "/index.html"
-    expect(page).to have_content("Demonstration")
+    expect(page).to have_text("Demonstration")
 
     click_link "New Link"
 
-    expect(page).to have_content("Cancel Link")
+    expect(page).to have_text("Cancel Link")
 
     click_link "Cancel"
-    expect(page).to have_no_content("Cancel Link")
+    expect(page).to have_no_text("Cancel Link")
   end
 
   it "adds and removes button", :aggregate_failures do
     visit "/index.html"
-    expect(page).to have_content("Demonstration")
+    expect(page).to have_text("Demonstration")
 
     click_link "New Button"
-    expect(page).to have_content("Cancel Button")
+    expect(page).to have_text("Cancel Button")
 
     click_button "Cancel"
-    expect(page).to have_no_content("Cancel Button")
+    expect(page).to have_no_text("Cancel Button")
   end
 end
