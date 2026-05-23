@@ -5,11 +5,11 @@ jobs:
     docker:
       - image: bkuhlmann/alpine-ruby:latest
     steps:
+      - checkout
+
       - run:
           name: Chromium Install
           command: apk add chromium
-
-      - checkout
 
       - run:
           name: Node Install
