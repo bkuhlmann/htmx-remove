@@ -2,8 +2,8 @@
   "name": "htmx-remove",
   "version": "3.3.0",
   "description": "A htmx extension for DOM element removal via click events.",
-  "main": "build/htmx-remove.esm.js",
   "type": "module",
+  "main": "build/htmx-remove.esm.js",
   "files": [
     "build/*.js",
     "README.adoc",
@@ -32,7 +32,7 @@
   "homepage": "https://alchemists.io/projects/htmx-remove",
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "esbuild": "^0.25.9",
+    "esbuild": "^0.27.2",
     "eslint": "^10.4.0",
     "globals": "^17.3.0"
   }
