@@ -35,7 +35,7 @@ To use via the HTML `script` element, add the following to your layout:
 [source,html]
 ----
 <script src="https://unpkg.com/htmx-remove@latest"
-        integrity="sha384-NwB2Xh66PNEYfVki0ao13UAFmdNtMIdBKZ8sNGRT6hKfCPaINuZ4ScxS6vVAycPT"
+        integrity="sha384-WeJW4w07aQN/HbtTzlm27w4D1dkAV9eCWGmX5bPFBQpsoZRQCdp7PAQLDyjay8pu"
         crossorigin="anonymous">
 </script>
 ----
