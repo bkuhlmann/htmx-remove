@@ -20,7 +20,11 @@ export default defineConfig(
       }
     },
     rules: {
-      indent: ["error", 2],
+      indent: [
+        "error",
+        2,
+        {"ignoredNodes": ["CallExpression > MemberExpression.callee"]}
+      ],
       "linebreak-style": ["error", "unix"],
       quotes: ["error", "double"],
       semi: ["error", "always"],
