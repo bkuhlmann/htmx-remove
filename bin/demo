@@ -5,15 +5,22 @@ set -o errexit
 set -o pipefail
 IFS=$'\n\t'
 
-port="${1:-3030}"
+if ! command -v entr > /dev/null; then
+  printf "%s" "ERROR: Entr isn't installed: https://eradman.com/entrproject. "
+  printf "%s\n" "To fix, run: brew install entr."
 
-rm -rf tmp/demo
-mkdir -p tmp/demo
-cp -r demo/ tmp/demo
-cp lib/*.js tmp/demo
+  exit 1
+fi
 
-(
-  cd tmp/demo
-  open "http://localhost:$port"
-  ruby -run -e httpd . --port "$port"
-)
+build_and_serve() {
+  rm -rf tmp/demo
+  mkdir -p tmp/demo
+  cp -r demo/ tmp/demo
+  cp lib/*.js tmp/demo
+
+  ruby -run -e httpd tmp/demo --port 3030
+}
+
+export -f build_and_serve
+
+find lib demo -type f | entr -s -r "build_and_serve"
