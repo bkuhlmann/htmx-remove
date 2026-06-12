@@ -1,0 +1,16 @@
+#! /usr/bin/env bash
+
+set -o nounset
+set -o errexit
+set -o pipefail
+IFS=$'\n\t'
+
+if ! command -v milestoner > /dev/null; then
+  printf "%s" "ERROR: Milestoner isn't installed: https://alchemists.io/projects/milestoner. "
+  printf "%s\n" "To fix, run: gem install milestoner."
+
+  exit 1
+fi
+
+npm publish
+milestoner --publish
