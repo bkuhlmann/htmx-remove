@@ -35,5 +35,8 @@
     "esbuild": "^0.27.2",
     "eslint": "^10.5.0",
     "globals": "^17.3.0"
+  },
+  "allowScripts": {
+    "@eslint/js@10.0.1": true
   }
 }
