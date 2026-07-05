@@ -32,11 +32,12 @@
   "homepage": "https://alchemists.io/projects/htmx-remove",
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "esbuild": "^0.27.2",
+    "esbuild": "^0.28.1",
     "eslint": "^10.5.0",
     "globals": "^17.3.0"
   },
   "allowScripts": {
-    "@eslint/js@10.0.1": true
+    "@eslint/js@10.0.1": true,
+    "esbuild@0.28.1": true
   }
 }
