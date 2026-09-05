@@ -23,6 +23,7 @@ group :test do
   gem "rackup", "~> 2.1"
   gem "refinements", "~> 14.0"
   gem "rspec", "~> 3.13"
+  gem "webrick", "~> 1.9"
 end
 
 group :tools do
