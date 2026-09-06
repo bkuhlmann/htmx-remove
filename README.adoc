@@ -36,7 +36,7 @@ To use via the HTML `script` element, add the following to your layout:
 [source,html]
 ----
 <script src="https://unpkg.com/htmx-remove@latest"
-        integrity="sha384-WeJW4w07aQN/HbtTzlm27w4D1dkAV9eCWGmX5bPFBQpsoZRQCdp7PAQLDyjay8pu"
+        integrity="sha384-9QPHGGk2naRYBFo/pfo4j+aGVLkSdgV2+43jt1tf0Wh+cgZpsmlWfHFejBlaL/8U"
         crossorigin="anonymous">
 </script>
 ----
@@ -94,7 +94,7 @@ Upon clicking the _New_ link, the following element would be added to the DOM af
 
 [source,html]
 ----
-<form class="body" action="/tasks" method="post" hx-ext="remove">
+<form class="body" action="/tasks" method="post">
   <!-- Implementation details... -->
 
   <input name="commit"
@@ -109,9 +109,9 @@ Upon clicking the _New_ link, the following element would be added to the DOM af
 </form>
 ----
 
-In this case, clicking the _Cancel_ button would remove the entire form element from the DOM. This is made possible by first adding the `hx-ext="remove"` attribute to the `form` element and then adding the `data-remove="true"` attribute to the `button` element.
+In this case, clicking the _Cancel_ button would remove the entire form element from the DOM. This is made possible by adding the `data-remove="true"` attribute to the `button` element.
 
-Behind the scenes, this extension will listen for click events for the first element with a `data-remove="true"` attribute. Once clicked, the corresponding element for which this extension is loaded and associated with (i.e. `form`) via the `hx-ext="remove"` attribute will be removed from the DOM.
+Behind the scenes, this extension will listen for click events on the element with a `data-remove="true"` attribute. This element is known as your _action_. Once clicked, the corresponding parent element of your action will be removed from the DOM. In other words, the entire form -- including your action -- that was originally swapped in.
 
 That's it! A simple extension for dealing with DOM elements a user might want to cancel/remove because they decided adding something new wasn't necessary after all.
 
