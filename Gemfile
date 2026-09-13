@@ -5,7 +5,7 @@ ruby file: ".ruby-version"
 source "https://rubygems.org"
 
 group :quality do
-  gem "caliber", "~> 0.90"
+  gem "caliber", "~> 0.97"
   gem "git-lint", "~> 11.0"
   gem "reek", "~> 6.5", require: false
   gem "simplecov", "~> 1.3", require: false
